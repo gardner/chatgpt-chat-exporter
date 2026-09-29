@@ -34,6 +34,11 @@ No install, no server, no account: everything runs locally in your browser.
 
 ### Method 1: Install as Userscript (Recommended)
 
+A standalone Firefox extension can also be built from this checkout. See
+[Firefox extension build and signing](docs/FIREFOX_EXTENSION.md). Permanent
+installation through **Install Add-on From File** requires a Mozilla-signed XPI;
+the general release ZIP contains userscripts and is not an installable add-on.
+
 1. Install a userscript manager:
    - [Tampermonkey](https://www.tampermonkey.net/) (Chrome, Firefox, Safari, Edge)
    - [Violentmonkey](https://violentmonkey.github.io/) (Chrome, Firefox)

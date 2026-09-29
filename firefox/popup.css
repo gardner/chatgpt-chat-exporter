@@ -1,0 +1,7 @@
+:root { color-scheme: light dark; font: 14px/1.5 system-ui, sans-serif; }
+body { width: 280px; margin: 16px; }
+h1 { font-size: 18px; margin: 0 0 12px; }
+p { margin: 12px 0; }
+button { display: block; width: 100%; margin: 8px 0; padding: 10px; font: inherit; cursor: pointer; }
+button:disabled { cursor: wait; }
+#status { min-height: 1.5em; }

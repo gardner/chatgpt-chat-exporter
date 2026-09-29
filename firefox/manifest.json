@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Chat Exporter",
+  "version": "1.2.3",
+  "description": "Export the open ChatGPT conversation to Markdown or a print-ready HTML file.",
+  "permissions": ["scripting"],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://chat.com/*"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "chatgpt-chat-exporter@gardner.github.io",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": { "required": ["none"] }
+    },
+    "gecko_android": { "strict_min_version": "142.0" }
+  },
+  "action": {
+    "default_title": "Export ChatGPT conversation",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": [
+      "https://chatgpt.com/*",
+      "https://chat.openai.com/*",
+      "https://chat.com/*"
+    ],
+    "js": ["chatgpt-exporter.js"],
+    "world": "MAIN",
+    "run_at": "document_idle"
+  }]
+}

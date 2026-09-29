@@ -4,10 +4,14 @@
   "description": "Export ChatGPT and Google Gemini conversations to Markdown, HTML, or PDF-ready files from the browser console or as userscripts.",
   "main": "src/extraction-engine.js",
   "scripts": {
-    "build": "node scripts/build-exporters.js && node scripts/build-bookmarklets.js",
+    "build": "node scripts/build-exporters.js && node scripts/build-bookmarklets.js && node scripts/build-firefox.js",
     "test": "node scripts/build-exporters.js --check && node scripts/build-bookmarklets.js --check && node --test",
     "release:prepare": "npm run build && npm test && node scripts/package-release.js",
-    "test:browser": "playwright test"
+    "test:browser": "node scripts/build-firefox.js && playwright test",
+    "build:firefox": "node scripts/build-firefox.js",
+    "lint:firefox": "web-ext lint --source-dir dist/firefox-extension --warnings-as-errors",
+    "package:firefox": "npm run build:firefox && web-ext build --source-dir dist/firefox-extension --artifacts-dir dist/firefox-unsigned --overwrite-dest",
+    "sign:firefox": "npm run build:firefox && web-ext sign --source-dir dist/firefox-extension --artifacts-dir dist/firefox-signed --channel unlisted"
   },
   "repository": {
     "type": "git",
@@ -32,7 +36,9 @@
   "devDependencies": {
     "@playwright/test": "1.63.0",
     "jsdom": "30.1.1",
-    "terser": "5.51.2"
+    "terser": "5.51.2",
+    "web-ext": "10.7.0",
+    "yauzl": "3.4.0"
   },
   "engines": {
     "node": "^22.22.2 || ^24.15.0 || >=26.0.0"

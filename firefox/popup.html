@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChatGPT Chat Exporter</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <h1>Export conversation</h1>
+  <p>Open a ChatGPT conversation, then choose a format.</p>
+  <button type="button" data-format="markdown">Save Markdown</button>
+  <button type="button" data-format="pdf">Save for PDF</button>
+  <p>For PDF, open the downloaded HTML file and choose Print → Save as PDF.</p>
+  <p id="status" role="status" aria-live="polite"></p>
+</body>
+</html>
