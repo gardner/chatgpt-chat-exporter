@@ -32,12 +32,22 @@ No install, no server, no account: everything runs locally in your browser.
 
 ## 📦 How to Use
 
-### Method 1: Install as Userscript (Recommended)
+### Firefox extension
 
-A standalone Firefox extension can also be built from this checkout. See
-[Firefox extension build and signing](docs/FIREFOX_EXTENSION.md). Permanent
-installation through **Install Add-on From File** requires a Mozilla-signed XPI;
-the general release ZIP contains userscripts and is not an installable add-on.
+[Download the signed Firefox extension v1.2.3 (.xpi)](https://github.com/gardner/chatgpt-chat-exporter/releases/download/firefox-v1.2.3/chatgpt-chat-exporter-firefox-v1.2.3.xpi).
+This add-on is Mozilla-signed for **unlisted distribution** through GitHub and
+requires Firefox 140 or later.
+
+If Firefox downloads the file instead of offering to install it, open
+`about:addons`, click the gear menu, and choose **Install Add-on From File…**.
+Reload existing ChatGPT tabs after installation.
+
+See [releases and checksums](https://github.com/gardner/chatgpt-chat-exporter/releases)
+for updates, or [build and signing instructions](docs/FIREFOX_EXTENSION.md)
+to build it yourself. The general release ZIP contains userscripts and is not
+an installable add-on.
+
+### Method 1: Install as Userscript (Recommended)
 
 1. Install a userscript manager:
    - [Tampermonkey](https://www.tampermonkey.net/) (Chrome, Firefox, Safari, Edge)
